@@ -1,0 +1,223 @@
+三栏布局
+参考网址：https://www.jianshu.com/p/3046eb050664
+1）圣杯布局
+    .container {
+      overflow: hidden;
+      padding: 0 200px;
+    }
+
+    .container div {
+      position: relative;
+      float: left;
+      height: 100px;
+    }
+
+    .center {
+      width: 100%;
+      background-color: red;
+    }
+
+    .left {
+      width: 200px;
+      background-color: green;
+      margin-left: -100%;
+      left: -200px;
+    }
+
+    .right {
+      width: 200px;
+      background-color: blue;
+      margin-left: -200px;
+      right: -200px
+    }
+
+<body>
+  <div class="container">
+    <div class="center">
+      center
+    </div>
+    <div class="left">
+      left
+    </div>
+    <div class="right">
+      right
+    </div>
+  </div>
+</body>
+
+
+2)双飞翼布局
+    .container {
+      overflow: hidden;
+    }
+
+    .container>div {
+      height: 100px;
+      position: relative;
+      float: left;
+    }
+
+    .main {
+      width: 100%;
+    }
+
+    .center {
+      height: 100px;
+      margin: 0 200px;
+      background-color: red;
+    }
+
+    .left {
+      width: 200px;
+      background-color: green;
+      margin-left: -100%;
+    }
+
+    .right {
+      width: 200px;
+      background-color: blue;
+      margin-left: -200px;
+    }
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="center">center</div>
+    </div>
+    <div class="left">
+      left
+    </div>
+    <div class="right">
+      right
+    </div>
+  </div>
+</body>
+
+3）Flex布局
+.container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .container>div {
+      height: 100px;
+    }
+
+    .center {
+      background-color: red;
+      flex-grow: 1;
+    }
+
+    .left {
+      order: -1;
+      background-color: green;
+      flex-basis: 200px;
+    }
+
+    .right {
+      background-color: blue;
+      flex-basis: 200px;
+    }
+<body>
+  <div class="container">
+    <div class="center">center</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+</body>
+
+4)绝对定位布局
+.container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container>div {
+      height: 100px;
+    }
+
+    .center {
+      position: absolute;
+      left: 200px;
+      right: 200px;
+      top: 0;
+      bottom: 0;
+      background-color: red;
+    }
+
+    .left {
+      float: left;
+      width: 200px;
+      background-color: green;
+    }
+
+    .right {
+      float: right;
+      width: 200px;
+      background-color: blue;
+    }
+<body>
+  <div class="container">
+    <div class="center">center</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+</body>
+
+5)table-cell布局
+.container{
+      overflow: hidden;
+      position: relative;
+    }
+    .container>div{
+      display:table-cell;
+      height:100px;
+    }
+    .center{
+      width:100%;
+      background-color: red;
+      margin:0 200px;
+    }
+    .left{
+      width:200px;
+      min-width:200px;
+      background-color: green;
+    }
+    .right{
+      width:200px;
+      min-width:200px;
+      background-color: blue;
+    }
+<body>
+  <div class="container">
+    <div class="left">left</div>
+    <div class="center">center</div>
+    <div class="right">right</div>
+  </div>
+</body>
+
+6)网格布局
+  .container {
+      display: grid;
+      width: 100%;
+      grid-template-rows: 100px;
+      grid-template-columns: 200px auto 200px;
+    }
+
+    .center {
+      background-color: red;
+    }
+
+    .left {
+      background-color: green;
+    }
+
+    .right {
+      background-color: blue;
+    }
+<body>
+  <div class="container">
+    <div class="center">center</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+</body>
