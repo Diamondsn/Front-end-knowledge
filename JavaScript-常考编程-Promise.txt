@@ -33,3 +33,5 @@ Promise.race = function (args) {
         })
     });
 }
+
+3.简单promise实现
