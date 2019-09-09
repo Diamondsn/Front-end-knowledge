@@ -1,0 +1,11 @@
+跨域的方式
+// https://blog.csdn.net/ligang2585116/article/details/73072868
+
+1）图像ping
+2）JSONP跨域
+3）CORS
+4）window.name+iframe
+5)window.postMessage()
+6)document.domain+iframe
+7)websocket
+8)服务器代理

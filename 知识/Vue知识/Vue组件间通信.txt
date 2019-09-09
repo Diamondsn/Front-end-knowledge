@@ -1,0 +1,9 @@
+Vue组件间通信
+// https://juejin.im/post/5cde0b43f265da03867e78d3
+
+1)props/$emit
+2)$emit/$on
+3)VueX
+4)$attrs/$listeners
+5)provide/inject
+6)$parent/$childen与ref

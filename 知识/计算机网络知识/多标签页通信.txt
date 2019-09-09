@@ -1,0 +1,7 @@
+多标签页通信
+
+https://baotao1997.github.io/interview/html.html
+
+1）localStorage+监听storage事件
+2）cookie+setInterval
+3）postMessage（）
