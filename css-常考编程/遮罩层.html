@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<style>
+    #background {
+        background-color: rgba(0,0,0,0.5);
+        position:fixed;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+    }
+
+    #content {
+       width:200px;
+       height:200px;
+       background-color:red;
+       position:absolute;
+       left:50%;
+       top:50%;
+       margin-top:-100px;
+       margin-left:-100px;
+       line-height: 200px;
+       text-align: center;
+       
+       transition: .64s ease-in-out;
+    }
+
+    #close {
+        position:absolute;
+        right:0;
+        top:0;
+        width:20px;
+        height:20px;
+    }
+</style>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        let btn=document.getElementById("btn");
+        btn.onclick=function(){
+            let dom=document.createElement("div");
+            dom.innerHTML="<div id='background'><div id='content'>内容</div><div id='close'>x</div></div>";
+            document.body.appendChild(dom);
+
+console.log(dom);
+            let background=document.getElementById("background");
+            let close=document.getElementById("close");
+            close.onclick=function(){
+                //background.style.display="none";
+                document.body.removeChild(dom);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,18 +1,18 @@
-window.setMyInterval = function(func, interval){
-    var nexttime    = interval;
-    var start        = new Date().getTime();
-    var now            = null;
-    var toffset        = 0;
-    
-    var i            = 0;
-    var timer         = null; 
+window.setMyInterval = function (func, interval) {
+    var nexttime = interval;
+    var start = new Date().getTime();
+    var now = null;
+    var toffset = 0;
 
-    var gogogo = function(){
-        timer = window.setTimeout(function(){
+    var i = 0;
+    var timer = null;
+
+    var gogogo = function () {
+        timer = window.setTimeout(function () {
             i++;
-            now            = new Date().getTime();
-            toffset        = now - (start + i * interval);
-            nexttime    = interval - toffset;
+            now = new Date().getTime();
+            toffset = now - (start + i * interval);
+            nexttime = interval - toffset;
 
             func();
 

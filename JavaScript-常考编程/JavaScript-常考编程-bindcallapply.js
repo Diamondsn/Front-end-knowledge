@@ -38,6 +38,18 @@ Function.prototype.call=function(){
    return result;
 }
 
+Function.prototype.mycall = function(context) {
+    if(context===null) context = window;
+    context.fn = this;
+    var args = [];
+    for(var i = 1, len = arguments.length; i < len; i++) {
+        args.push('arguments[' + i + ']');
+    }
+    var result = eval('context.fn(' + args +')');
+    delete context.fn;
+    return result;
+}
+
 Function.prototype.apply=function(){
     let [thisArg,args]=arguments;
    if(!thisArg){
@@ -47,6 +59,26 @@ Function.prototype.apply=function(){
    let result=thisArg.func(...args);
    delete thisArg.func;
    return result;
+}
+
+Function.prototype.myapply = function (context, arr) {
+    var context = Object(context) || window;
+    context.fn = this;
+
+    var result;
+    if (!arr) {
+        result = context.fn();
+    }
+    else {
+        var args = [];
+        for (var i = 0, len = arr.length; i < len; i++) {
+            args.push('arr[' + i + ']');
+        }
+        result = eval('context.fn(' + args + ')')
+    }
+
+    delete context.fn
+    return result;
 }
 
 function test(){
